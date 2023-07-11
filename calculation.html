@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #calculator {
+        width: 250px;
+        height: 400px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-rows: repeat(5, 1fr);
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+
+    #display {
+        grid-column: 1 / -1;
+        background-color: #eee;
+        padding: 20px;
+        font-size: 2em;
+        text-align: right;
+        border-bottom: 1px solid #ccc;
+    }
+
+    button {
+        background-color: #fff;
+        border: none;
+        font-size: 1.5em;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #ddd;
+    }
+
+    .number {
+        background-color: #eee;
+    }
+
+    .operator {
+        background-color
+    }
+</style>
+
+<body>
+    <div id="calculator">
+        <div id="display">0</div>
+        <button class="clear">C</button>
+        <button class="operator">/</button>
+        <button class="operator">*</button>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button class="operator">-</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button class="operator">+</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button class="equal">=</button>
+        <button>0</button>
+        <button>.</button>
+      </div>
+      
+</body>
+<script>
+    const calculator = document.getElementById('calculator');
+const display = document.getElementById('display');
+
+let firstOperand = null;
+let operator = null;
+let secondOperand = false;
+
+function operate(firstOperand, operator, secondOperand) {
+  switch (operator) {
+    case '+':
+      return firstOperand + secondOperand;
+    case '-':
+      return firstOperand - secondOperand;
+    case '*':
+      return firstOperand * secondOperand;
+    case '/':
+      return firstOperand / secondOperand;
+    default:
+      return 'Invalid operator';
+  }
+}
+
+calculator.addEventListener('click', event => {
+  const target = event.target;
+
+  if (target.tagName === 'BUTTON') {
+    const value = target.textContent;
+
+    if (!isNaN(value)) {
+      if (display.textContent === '0' || secondOperand) {
+        display.textContent = value;
+      } else {
+        display.textContent += value;
+      }
+      secondOperand = false;
+    } else if (value === '.') {
+      if (!display.textContent.includes('.')) {
+        display.textContent += '.';
+      }
+    } else if (value === 'C') {
+      display.textContent = '0';
+      firstOperand = null;
+      operator = null;
+      secondOperand = false;
+    } else {
+      if (firstOperand === null) {
+        firstOperand = Number(display.textContent);
+      } else if (operator) {
+        secondOperand = true;
+        const result = operate(firstOperand, operator, Number(display.textContent));
+        display.textContent = String(result);
+        firstOperand = result;
+      }
+      operator = value;
+    }
+  }
+});
+
+</script>
+
+</html>

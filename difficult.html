@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .head {
+        font-size: 42px;
+    }
+</style>
+
+<body>
+    <h1 class="head">
+        lec no 50
+    </h1>
+    <h1>
+        Most difficult concepts
+    </h1>
+    <p>
+        var harry="he is the best"
+        console.log(harry)
+        var replaced=harry.replace('best','great man')
+        console.log(replaced)
+    </p>
+    <h3>
+        For uppercase letter syntax
+    </h3>
+    <p>
+        console.log(replaced.toLocaleUpperCase())
+    </p>
+    <h3>
+        Triming
+    </h3>
+    <p>
+        var xyx=" this is game of "
+        console.log(xyx)
+        console.log(xyx.trim())
+    </p>
+    <h1 class="head">
+        lec no 51
+    </h1>
+    <h1>
+        We can also use 'let' instead of 'var'
+    </h1>
+    <p>
+        let a="this is s"
+        console.log(a)
+    </p>
+    <h3>
+        If and Else condition
+    </h3>
+    <p>
+        var age=10
+        if(age>11){
+        console.log("You are not eligible for student program. sorry ")
+        }
+        else if(age==2){
+        console.log("This is true")
+        }
+        else{
+        console.log("You are eligible for student program. Congrats")
+        }
+    </p>
+    <h3>Switches Uses</h3>
+    <p>
+        const cups=35
+        switch (cups) {
+        case 1:
+        console.log("This is the value 1")
+        break;
+        case 2:
+        console.log("This is the value 2")
+        break;
+        case 3:
+        console.log("This is the value 3")
+        break;
+        case 4:
+        console.log("This is the value 4")
+        break;
+        default:
+        console.log("Invalid Attempt")
+        break;
+        }
+    </p>
+    <h3>
+        Sorting the Var
+    </h3>
+    <p>
+        let names=new Array(0,734,4,3,2,1)
+        console.log(names)
+        game=names.sort()
+        console.log(game)
+    </p>
+    <h3>
+        For pushing some value or sentence in the arry
+    </h3>
+    <p>
+        let names=new Array(23,458,45);
+        console.log(names);
+        names.push("Enter the name")
+        console.log(names)
+    </p>
+    <h3>
+        Function Calling
+    </h3>
+    <p>
+        function call(name, greettext){
+            console.log("Hello "+name+". How are you? ")
+            console.log(greettext)
+        }
+        var name1="aaa"
+        var greettext="He is the good boy"
+        var name2="asd"
+        var name3="ad"
+        var name4="ac"
+        var name5="ab"
+        call(name1, greettext)
+        call(name2, greettext)
+        call(name3, greettext)
+        call(name4, greettext)
+        call(name5, greettext)
+    </p>
+    <h3>
+        Example of Functions
+    </h3>
+    <p>
+        function sum(a,b,c) {
+            let d=a+b+c;    
+            return d;
+            }
+            return1=sum(1,2,3);
+            console.log(return1)
+    </p>
+    <h3>
+        Prompt
+    </h3>
+    <p>
+        let name1=prompt("Enter your name: ", "Guest")
+console.log(name1)
+if (name1=="") {
+    console.log("Invalid")
+    prompt("Enter your name: ")
+}
+else{
+    console.log("Nice to see you " +name1)
+}
+    </p>
+    <h3>
+        Confirming Post
+    </h3>
+    <p>
+        let deletePost = confirm("Do you really want to delete this post?")
+if (deletePost) {
+    console.log("You post have been deleted.")
+}
+else{
+    console.log("Your post have not been deleted.")
+}
+    </p>
+    <h3>
+        This is the Array loop
+    </h3>
+    <p>
+        let frnd=["Rohan", "Tom", "Cat", "Dog"]
+for (let index = 0; index < frnd.length; index++) {
+    console.log("It is the "+frnd[index])
+    
+}
+    </p>
+    <h3>
+        Foreach Function
+    </h3>
+    <p>
+        let a=["Java", "Python", "C", "C++", "C#"]
+a.forEach(function(elephant) {
+    console.log("These are the languages "+elephant);
+});
+<h3>
+    We can also use this too
+</h3>
+<p>
+    let a=["Java", "Python", "C", "C++", "C#"]
+for(alpha of a){
+console.log("These are the languages "+alpha);
+}
+</p>
+    <h3>
+        Important Pro
+    </h3>
+    <p>
+        let employee={
+            Name: "Awais",
+            Salary:"5",
+            Passion:"Trading"
+        }
+        for(key in employee){
+            console.log(`The ${key} of employee is ${employee[key]}`)
+        }
+    </p>
+    <h3>
+        Hide and show the button
+    </h3>
+    <p>
+        function btn(){
+            var btn = document.getElementById('btn')
+            var para= document.getElementById('para')
+            if(para.style.display!='none'){
+                para.style.display='none';
+            }
+            else{
+                para.style.display='';
+            }
+           }
+    </p>
+</body>
+
+</html>
